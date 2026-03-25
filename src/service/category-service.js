@@ -9,20 +9,21 @@ const findAll = async () => {
     select: {
       id: true,
       name: true,
+      children: true,
     },
   });
   // iterasi semua parent, tambahkan children
-  for (let parent of parents) {
-    parent.children = await prismaClient.category.findMany({
-      where: {
-        parent_id: parent.id,
-      },
-      select: {
-        id: true,
-        name: true,
-      },
-    });
-  }
+  // for (let parent of parents) {
+  //   parent.children = await prismaClient.category.findMany({
+  //     where: {
+  //       parent_id: parent.id,
+  //     },
+  //     select: {
+  //       id: true,
+  //       name: true,
+  //     },
+  //   });
+  // }
 
   return parents;
 };

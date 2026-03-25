@@ -1,4 +1,4 @@
-import prismaClient from "../application/database.js";
+import { prismaClient } from "../application/database.js";
 
 const findAll = async () => {
   // query semua parent
